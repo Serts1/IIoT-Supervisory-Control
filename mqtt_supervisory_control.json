@@ -1,0 +1,778 @@
+[
+    {
+        "id": "ce6785f857b8e2b3",
+        "type": "tab",
+        "label": "Water Pump",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bc6e0bb813844787",
+        "type": "group",
+        "z": "ce6785f857b8e2b3",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "6cfba52a6d50e04e",
+            "25b5a2e9031dbe1b",
+            "e155a583420dbc77",
+            "11e0c5af4fcc3f48",
+            "2b10ad4b344bd4ff",
+            "bde90a650f902839",
+            "41cdeee8171d9924",
+            "eb2a3179ce68ac86",
+            "5b9c041260f006d0",
+            "d4cfd8d97cbcc07c",
+            "12b8af542aa295db",
+            "dab294552ef8b39a",
+            "601d306c2a6eba25",
+            "da5fe21d745347a3",
+            "7055653af681ae69",
+            "b4a8c83287510bea",
+            "83a7f796bc53cf7a",
+            "20f1e99ec391df97",
+            "f860a0e5efe13a0a",
+            "ac4aa517131d95aa",
+            "00cbbb99a939751b",
+            "1fd30820c9fef825",
+            "ee327936a1a0900f",
+            "3f6b05b98ea5ac74",
+            "3bbac419e5668cf5",
+            "0a8dd26b71cf75c5"
+        ],
+        "x": 14,
+        "y": 139,
+        "w": 1672,
+        "h": 362
+    },
+    {
+        "id": "6cfba52a6d50e04e",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.1",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "plc/di/e11",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 220,
+        "wires": [
+            [
+                "25b5a2e9031dbe1b"
+            ]
+        ]
+    },
+    {
+        "id": "25b5a2e9031dbe1b",
+        "type": "rbe",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.1trig",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "e155a583420dbc77"
+            ]
+        ]
+    },
+    {
+        "id": "e155a583420dbc77",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.1 pulse",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 220,
+        "wires": [
+            [
+                "11e0c5af4fcc3f48"
+            ]
+        ]
+    },
+    {
+        "id": "11e0c5af4fcc3f48",
+        "type": "change",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "event",
+                "pt": "msg",
+                "to": "e11",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "20f1e99ec391df97",
+                "ac4aa517131d95aa"
+            ]
+        ]
+    },
+    {
+        "id": "2b10ad4b344bd4ff",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.1",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "plc/di/e21",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "bde90a650f902839"
+            ]
+        ]
+    },
+    {
+        "id": "bde90a650f902839",
+        "type": "rbe",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.1trig",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 440,
+        "y": 380,
+        "wires": [
+            [
+                "41cdeee8171d9924"
+            ]
+        ]
+    },
+    {
+        "id": "41cdeee8171d9924",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.1 pulse",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "eb2a3179ce68ac86"
+            ]
+        ]
+    },
+    {
+        "id": "eb2a3179ce68ac86",
+        "type": "change",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "event",
+                "pt": "msg",
+                "to": "e21",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 380,
+        "wires": [
+            [
+                "f860a0e5efe13a0a",
+                "ac4aa517131d95aa"
+            ]
+        ]
+    },
+    {
+        "id": "5b9c041260f006d0",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.2",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "plc/di/e12",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "d4cfd8d97cbcc07c"
+            ]
+        ]
+    },
+    {
+        "id": "d4cfd8d97cbcc07c",
+        "type": "rbe",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.2trig",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "12b8af542aa295db"
+            ]
+        ]
+    },
+    {
+        "id": "12b8af542aa295db",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e1.2 pulse",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "dab294552ef8b39a"
+            ]
+        ]
+    },
+    {
+        "id": "dab294552ef8b39a",
+        "type": "change",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "event",
+                "pt": "msg",
+                "to": "e12",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 300,
+        "wires": [
+            [
+                "20f1e99ec391df97"
+            ]
+        ]
+    },
+    {
+        "id": "601d306c2a6eba25",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.2",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "plc/di/e22",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 310,
+        "y": 460,
+        "wires": [
+            [
+                "da5fe21d745347a3"
+            ]
+        ]
+    },
+    {
+        "id": "da5fe21d745347a3",
+        "type": "rbe",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.2trig",
+        "func": "rbei",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 440,
+        "y": 460,
+        "wires": [
+            [
+                "7055653af681ae69"
+            ]
+        ]
+    },
+    {
+        "id": "7055653af681ae69",
+        "type": "switch",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "e2.2 pulse",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 460,
+        "wires": [
+            [
+                "b4a8c83287510bea"
+            ]
+        ]
+    },
+    {
+        "id": "b4a8c83287510bea",
+        "type": "change",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "event",
+                "pt": "msg",
+                "to": "e22",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 460,
+        "wires": [
+            [
+                "f860a0e5efe13a0a",
+                "ac4aa517131d95aa"
+            ]
+        ]
+    },
+    {
+        "id": "83a7f796bc53cf7a",
+        "type": "mqtt in",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "topic": "plc/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "a19021099df9edc9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "6cfba52a6d50e04e",
+                "5b9c041260f006d0",
+                "2b10ad4b344bd4ff",
+                "601d306c2a6eba25"
+            ]
+        ]
+    },
+    {
+        "id": "20f1e99ec391df97",
+        "type": "function",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "G1",
+        "func": "const initstate = \"q11\";\nconst e1_1 = msg.event.e11;\nconst e1_2 = msg.event.e12;\n\n// Initialize the state q1.1\nlet state = context.get(\"state\");\nif (!state) {\n    state = initstate;\n    context.set(\"state\",state);\n}\n\nlet update = false;\n\n// Transistions \nif (state === \"q11\" && e1_1 === true){\n    state = \"q12\";\n    update = true;\n}\nelse if (state === \"q12\" && e1_2 === true){\n    state = \"q11\";\n    update = true;\n}\n\n//Save new state\nif (update == true){\n    context.set(\"state\" , state);\n}\n\n//Output state\nmsg.currentstateG1 = state;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 220,
+        "wires": [
+            [
+                "1fd30820c9fef825"
+            ]
+        ]
+    },
+    {
+        "id": "f860a0e5efe13a0a",
+        "type": "function",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "G2",
+        "func": "const initstate = \"q21\";\nconst e2_1 = msg.event.e21;\nconst e2_2 = msg.event.e22;\n\n//Initialize the state q21\nlet  state = context.get(\"state\");\nif (!state){\n    state = initstate;\n    context.set(\"state\",state);\n}\n\nlet update = false;\n\n//Transistions\nif (state === \"q21\" && e2_1 === true) {\n    state = \"q22\";\n    update = true;\n}\nelse if (state === \"q22\" && e2_2 === true) {\n    state = \"q21\";\n    update = true;\n}\n\n//Save new state\nif (update == true) {\n    context.set(\"state\", state);\n}\n\n//Output state\nmsg.currentstateG2 = state;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 460,
+        "wires": [
+            [
+                "1fd30820c9fef825"
+            ]
+        ]
+    },
+    {
+        "id": "ac4aa517131d95aa",
+        "type": "function",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "S1",
+        "func": "const initstate = \"qs11\";\nconst e1_1 = msg.event.e11;\nconst e2_1 = msg.event.e21;\nconst e2_2 = msg.event.e22;\n\n// Initialize the state qs1.1\nlet state = context.get(\"state\");\nif (!state){\n    state = initstate;\n    context.set(\"state\", state);\n}\n\nlet update = false;\n\n// Transistions \nif (state === \"qs11\" && e2_1 === true) {\n    state = \"qs12\";\n    update = true;\n}\nelse if (state === \"qs11\" && e2_2 === true) {\n    state = \"qs11\";\n    update = true;\n}\nelse if (state === \"qs12\" && e2_2 === true) {\n    state = \"qs11\";\n    update = true;\n}\nelse if (state === \"qs12\" && (e1_1 === true || e2_1 === true) ) {\n    state = \"qs12\";\n    update = true;\n}\n\n//Save new state\nif (update == true) {\n    context.set(\"state\", state);\n}\n\n//Output state\nmsg.currentstateS1 = state;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 340,
+        "wires": [
+            [
+                "1fd30820c9fef825"
+            ]
+        ]
+    },
+    {
+        "id": "00cbbb99a939751b",
+        "type": "mqtt out",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "",
+        "topic": "state/topic",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "a19021099df9edc9",
+        "x": 1430,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1fd30820c9fef825",
+        "type": "function",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "Publish state to PLC",
+        "func": "msg.topic = \"state/topic\";\nlet G1state = msg.currentG1;\nlet G2state = msg.currentG2;\nlet S1state = msg.currentS1;\nmsg.payload={\n    G1state,\n    G2state,\n    S1state\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 340,
+        "wires": [
+            [
+                "00cbbb99a939751b",
+                "ee327936a1a0900f",
+                "3f6b05b98ea5ac74"
+            ]
+        ]
+    },
+    {
+        "id": "ee327936a1a0900f",
+        "type": "debug",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "Monitor PLC Command",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3f6b05b98ea5ac74",
+        "type": "ui-text",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "group": "3f943ba0f944260c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Water Pump Control",
+        "label": "Current System State",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1500,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "3bbac419e5668cf5",
+        "type": "comment",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "Dashboard Water Pump",
+        "info": "http://localhost:1880/dashboard/Water_Pump_Control",
+        "x": 1560,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "0a8dd26b71cf75c5",
+        "type": "comment",
+        "z": "ce6785f857b8e2b3",
+        "g": "bc6e0bb813844787",
+        "name": "Water Pump",
+        "info": "",
+        "x": 110,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a19021099df9edc9",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3f943ba0f944260c",
+        "type": "ui-group",
+        "name": "Water Pump Control",
+        "page": "ce1eb7fd67c9c3d9",
+        "width": 6,
+        "height": 1,
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ce1eb7fd67c9c3d9",
+        "type": "ui-page",
+        "name": "Water Pump Control",
+        "ui": "821e71195460a5ca",
+        "path": "/Water_Pump_Control",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "2b4a7de658986f24",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": -1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "821e71195460a5ca",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "2b4a7de658986f24",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "6596b09941568c1d",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2"
+        }
+    }
+]
